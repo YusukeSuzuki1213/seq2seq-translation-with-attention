@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  seq2seq_example:
+    container_name: seq2seq_example
+    user: "${UID}:${GID}"
+    build: .
+    volumes:
+      - ./:/mnt
+    ports:
+      - "8984:8888"
+    tty: true
+    command: /bin/bash
+    runtime: nvidia
